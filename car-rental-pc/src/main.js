@@ -12,12 +12,13 @@ Vue.use(ElementUI);
 Vue.use(Css);
 Vue.use(Element, { size: 'small', zIndex: 3000 });
 Vue.config.productionTip = false
-
+import Css from '../static/css/common.css'
+Vue.use(Css);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   render: h => h(App),
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
 })
