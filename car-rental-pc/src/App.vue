@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <Head></Head>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Head from './components/ch_Head/head'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Head
+ },
 }
 </script>
 
@@ -17,5 +22,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   text-align:center;
+  /* margin-top: 60px; */
 }
 </style>
