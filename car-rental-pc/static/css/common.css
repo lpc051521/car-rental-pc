@@ -10,7 +10,10 @@ html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     /* 字体大小设置为 100px */
+
+ 
     font-size: 16px;
+
 }
 
 html ,body {
@@ -23,7 +26,11 @@ html ,body {
 /* 去除iPhone中默认的input样式 */
 
 input {
+
+    /* -webkit-appearance: none; */
+
     -webkit-appearance: none;
+
     resize: none;
 }
 
@@ -105,7 +112,10 @@ img {
 
 /* 清除输入框内阴影 */
 
+
+
 input,
+
 select,
 textarea {
     border: 0;
@@ -113,12 +123,15 @@ textarea {
     appearance: none;
 }
 
+
+
 /* 禁用长按页面时的弹出菜单(iOS下有效) ,img和a标签都要加 */
 
 img,
 a {
     -webkit-touch-callout: none;
 }
+
 
 /* 清零 */
 
@@ -194,7 +207,11 @@ strong {
 a {
     text-decoration: none;
     color: #42bd56;
+
+    font-family: Tahoma, Arial,"Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC";
+
     font-family: Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
+
 }
 
 ul,
@@ -210,11 +227,20 @@ h4,
 h5,
 h6 {
     font-size: 100%;
+
+    font-family: Tahoma, Arial,"Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC";
+
     font-family: Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
+
     font-weight: normal;
 }
 
 fieldset,
+
+img {
+    border: none;
+}
+
 
 
 table {
