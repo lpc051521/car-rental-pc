@@ -8,7 +8,7 @@
                  <input type="text">
              </li>
              <li>
-                 <p class="left">证件号</p>
+                 <p class="left">身份证</p>
                  <input type="text">
              </li>
              <li>
@@ -22,7 +22,7 @@
          </ul>
          <ul>
              <li>
-                 <p class="ping">平驾币</p>
+                 <p class="ping">驾驶券</p>
                  <input type="text">
              </li>
              <li>
@@ -30,7 +30,7 @@
                  <input type="text">
              </li>
              <li>
-                 <p class="pople">紧急联系人</p>
+                 <p class="pople">驾驶证</p>
                  <input type="text">
              </li>
          </ul>
@@ -48,7 +48,7 @@
                  <input type="text">
              </li>
              <li>
-                 <p class="left">颜色</p>
+                 <p class="left">发动机</p>
                  <input type="text">
              </li>
          </ul>
@@ -58,7 +58,7 @@
          <p>订单信息:</p>
          <ul>
              <li>
-                 <p class="num">定金</p>
+                 <p class="num">金额</p>
                  <input type="text">
                  <span>元</span>
              </li>
@@ -77,7 +77,7 @@
 
     <div class="top">
          <p>消息历史:</p>
-         <ul>
+         <ul class="ip">
              <li class="three">租车时间</li>
              <li class="pai">品牌</li>
              <li class="pai">租车时长</li>
@@ -186,12 +186,14 @@ export default {
                 margin-left: 53px;
             }
             .pople{
-                margin-left: 27px;
+                margin-left: 65px;
             }
             .three{
                 margin-left: 30px;
             }
             .pai{
+                width: 100px;
+                text-align: center;
                 margin-left: 60px;
             }
             .mor{
@@ -202,6 +204,9 @@ export default {
                     margin-left: 10px;
                 }
             }
+        }
+        .ip{
+            margin-left: 6px;
         }
     }
     .for{

@@ -15,7 +15,10 @@
         <input type="checkbox" checked="checked" />
         <span>记住密码</span>
         <span>忘记密码？</span>
-        <button>登录</button>
+        <router-link to="/home">
+          <button>登录</button>
+        </router-link>
+        
       </div>
     </div>
   </div>
@@ -37,8 +40,9 @@ export default {
   width:1440px;
   height: 900px;
   background: url("./img/bac.png") no-repeat;
-  margin-top: -60px;
+  // margin-top: -60px;
   position: relative;
+  // overflow: hidden;
 
   
   .logo {

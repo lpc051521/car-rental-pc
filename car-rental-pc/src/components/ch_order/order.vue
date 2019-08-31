@@ -25,7 +25,7 @@ export default {
  components: {
      Title,
      Excio,
-     Foot
+     Foot,
  },
 };
 </script>

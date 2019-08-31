@@ -20,70 +20,79 @@ import Verify from './../components/verify/verify'
 import Result from './../components/result/result'
 
 export default new Router({
-  routes: [
-    // {
-    //   path: '/',
-    //   name: 'clearing',
-    //   component: Result
-    // },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
+  routes: [ 
+    // 车辆查询
     {
       path: '/inquire',
       name: 'inquire',
       component: Inquire
     },
+    // 费用结算管理
     {
       path: '/clearing',
       name: 'clearing',
       component: Clearing
     },
+    // 验车
     {
       path: '/verify',
       name: 'verify',
       component: Verify
     },
+    // 结算
     {
-
       path: '/result',
       name: 'result',
       component: Result
-
-      path: '/',
-      name: 'head',
-      component: Head
     },
+
+
+    // 空路径时展示登录页
+    {
+      path: '/',
+      name: 'login', 
+      component: Login
+    },
+    // 首页
     {
       path: '/home',
       component: Home
     },
+
+    // 免费注册
     {
       path: '/register',
       component: Register
     },
+
+    // 免费查询
     {
       path: '/refer',
       component: Refer
     },
+
+    // 编辑
     {
       path: '/compile',
       component: Compile
     },
+
+    // 充值
     {
       path: '/rechare',
       component: Rechare
     },
+
+    // 预约管理
     {
       path: '/manage',
       component: Manage
     },
+
+    // 受理预约
     {
       path: '/order',
       component: Order
-
     },
   ]
 })

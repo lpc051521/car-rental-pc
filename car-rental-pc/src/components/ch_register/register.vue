@@ -23,7 +23,7 @@ export default {
 
  },
  components: {
-     Title,Inp,Foot
+     Title,Inp,Foot,
  },
 };
 </script>

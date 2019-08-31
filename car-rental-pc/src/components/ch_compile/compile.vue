@@ -1,5 +1,6 @@
 <template>
  <div class="compile">
+     
      <Title></Title>
      <New></New>
      <Foot></Foot>
@@ -7,6 +8,7 @@
 </template>
 
 <script>
+
 import Title from './title'
 import New from './new'
 import Foot from '../ch_register/footer'
@@ -23,7 +25,7 @@ export default {
 
  },
  components: {
-     Title,New,Foot
+     Title,New,Foot,
  },
 };
 </script>

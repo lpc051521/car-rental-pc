@@ -1,16 +1,16 @@
 <template>
  <div class="title">
      <header>
-         <p>会员</p>
+         <p>首页</p>
          <ul>
-             <li><p>手机号</p></li>
-             <li><input type="text"></li>
+             <li><p>车辆</p></li>
+             <li><input type="text" placeholder="请输入车辆"></li>
              <li><button>查询</button></li>
          </ul>
          <ul class="right">
              <li><p>手机号</p></li>
-             <li><input type="text"></li>
-             <li><button>预约查询</button></li>
+             <li><input type="text" placeholder="请输入手机号"></li>
+             <li><button>查询</button></li>
          </ul>
      </header>
      <div class="list">
@@ -18,8 +18,8 @@
              <li>车辆</li>
              <li>车牌号</li>
              <li>成本</li>
-             <li>登记</li>
-             <li>违章处理</li>
+             <li>地区</li>
+             <li>状态</li>
          </ul>
          
          <ul class="white">
