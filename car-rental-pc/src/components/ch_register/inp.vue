@@ -9,11 +9,11 @@
              <p>性别</p>
              <div>
                  <span>男</span>
-                 <p></p>
+                 <p @click="yello" ref="no"></p>
              </div>
              <div class="women">
                  <span>女</span>
-                 <p></p>
+                 <p @click="yo" ref="po"></p>
              </div>
          </li>
          <li>
@@ -50,7 +50,18 @@ export default {
  };
  },
  methods: {
-
+     yello(){
+         this.$refs.no.style.background='yellow'
+         this.$refs.no.style.border='none'
+         this.$refs.po.style.background=''
+         this.$refs.po.style.border='1px solid #ccc'
+     },
+     yo(){
+         this.$refs.po.style.background='yellow'
+         this.$refs.po.style.border='none'
+         this.$refs.no.style.background=''
+         this.$refs.no.style.border='1px solid #ccc'
+     }
  },
  components: {
 
@@ -114,12 +125,12 @@ export default {
                 }
                 p{
                     float: left;
-                    width: 10px;
-                    height: 10px;
+                    width: 15px;
+                    height: 15px;
                     border-radius: 50%;
                     border: 1px solid #ccc;
                     margin-left: 10px;
-                    margin-top: 15px;
+                    margin-top: 13px;
                 }
             }
             .women{

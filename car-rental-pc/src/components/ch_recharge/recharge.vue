@@ -1,5 +1,6 @@
 <template>
  <div class="rechare">
+    
      <Title></Title>
      <New></New>
      <Foot></Foot>
@@ -23,7 +24,7 @@ export default {
 
  },
  components: {
-     Title,New,Foot
+     Title,New,Foot,
  },
 };
 </script>

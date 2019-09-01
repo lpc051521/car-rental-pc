@@ -1,5 +1,6 @@
 <template>
  <div class="refer">
+     
      <Title></Title>
      <Lists></Lists>
      <Foot></Foot>
@@ -7,6 +8,7 @@
 </template>
 
 <script>
+
 import Title from './title'
 import Lists from './lists'
 import Foot from '../ch_home/footer'
