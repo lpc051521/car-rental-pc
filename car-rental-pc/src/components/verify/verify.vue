@@ -11,7 +11,7 @@
         <p>订单信息 :</p>
         <div class="time">
           <div class="one">
-            <input type="radio" name="haha" />
+            <p class="yello"></p>
             <span>时租</span>
           </div>
           <div class="two">
@@ -33,14 +33,14 @@
 
         <div class="day">
           <div class="one">
-            <img src="./img/icon-11.png" alt />
+            <p class="yello"></p>
             <span>日租</span>
           </div>
         </div>
 
         <div class="month">
           <div class="one">
-            <input type="radio" name="haha" />
+            <p class="yello"></p>
             <span>月租</span>
           </div>
           <div class="two">
@@ -94,7 +94,7 @@
             <span>元</span>
           </div>
           <div class="v_four">
-            <span>基本保险</span>
+            <span>服务费</span>
             <input type="text" placeholder="40" />
             <span>元</span>
           </div>
@@ -146,12 +146,12 @@ export default {
 
 <style scoped lang="less">
 .verify {
-  width: 1212px;
+  width: 1203px;
   height: 895px;
   background: #f4f4f4;
   padding: 33px 30px;
   box-sizing: border-box;
-  float: left;
+  float: right;
   .top {
     width: 1152px;
     height: 64px;
@@ -418,7 +418,7 @@ export default {
           margin-left: 77px;
         }
         .v_four {
-          margin-left: 77px;
+          margin-left: 90px;
         }
       }
       .vanish_b {
@@ -472,7 +472,7 @@ export default {
         font-size: 18px;
         background: #fee952;
         border-radius: 5px;
-        margin-bottom:30px;
+        margin-top: 90px;
       }
     }
   }
@@ -481,6 +481,25 @@ export default {
       margin-top: 42px;
       color: #666;
       font-size: 14px;
+    }
+  }
+  .yello{
+    float: left;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin-top: 3px;
+  }
+  .day{
+    .yello{
+      margin-top: -1px;
+      margin-left: -2px;
+    }
+  }
+  .month{
+    .yello{
+      margin-top: 7px;
     }
   }
 }

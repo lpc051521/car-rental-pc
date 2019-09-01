@@ -27,7 +27,7 @@
          </ul>
          <ul class="big">
              <li class="ping">
-                 <p>平价币</p>
+                 <p>驾驶券</p>
                  <input type="text">
              </li>
              <li class="ema">
@@ -46,9 +46,10 @@
              <li>客户姓名</li>
              <li>车型</li>
              <li>支付金额</li>
-             <li>平驾币</li>
+             <li>驾驶券</li>
              <li>积分</li>
              <li>处理状态</li>
+             <li>操作</li>
          </ul>
          
          <ul class="white">
@@ -60,16 +61,18 @@
              <li>242</li>
              <li>221</li>
              <li>待审核</li>
+             <li class="bian">编辑</li>
          </ul>
          <ul class="color">
              <li>2019-8-21</li>
              <li>日租</li>
              <li>王祖涵</li>
-             <li>d大众帕萨特</li>
+             <li>大众帕萨特</li>
              <li>372</li>
              <li>972</li>
              <li>872</li>
              <li>待审核</li>
+             <li class="bian">编辑</li>
          </ul>
 
          <ul class="white">
@@ -81,6 +84,7 @@
              <li>555</li>
              <li>155</li>
              <li>待审核</li>
+             <li class="bian">编辑</li>
          </ul>
          <ul class="color">
              <li>2019-8-21</li>
@@ -91,6 +95,7 @@
              <li>181</li>
              <li>81</li>
              <li>待审核</li>
+             <li class="bian">编辑</li>
          </ul>
 
          <ul class="white">
@@ -102,6 +107,7 @@
              <li>372</li>
              <li>672</li>
              <li>待审核</li>
+             <li class="bian">编辑</li>
          </ul>
          <ul class="color">
              <li>2019-8-21</li>
@@ -112,17 +118,19 @@
              <li>782</li>
              <li>82</li>
              <li>待审核</li>
+             <li class="bian">编辑</li>
          </ul>
 
          <ul class="white">
              <li>2019-8-21</li>
              <li>月租</li>
              <li>吴佳楠</li>
-             <li>雪佛兰ma迈锐宝</li>
+             <li>雪佛兰迈锐宝</li>
              <li>1331</li>
              <li>2331</li>
              <li>331</li>
              <li>待审核</li>
+             <li class="bian">编辑</li>
          </ul>
          <ul class="color">
              <li>2019-8-21</li>
@@ -133,6 +141,7 @@
              <li>190</li>
              <li>190</li>
              <li>已审核</li>
+             <li class="bian">编辑</li>
          </ul>
      </div>
      <div class="math">
@@ -235,6 +244,13 @@ export default {
                 font-size: 14px;
                 color: #333333;
             }
+            .bian{
+                color: #3896ff;
+                font-size: 14px;
+            }
+            .bian:hover{
+                cursor: pointer;
+            }
         }
         .white{
             background: #fff;
@@ -262,6 +278,7 @@ export default {
             .dian{
                 border: none;
             }
+            
         }
     }
 }

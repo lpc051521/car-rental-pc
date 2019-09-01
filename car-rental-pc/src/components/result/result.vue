@@ -84,7 +84,7 @@
             <span>20</span>
           </li>
           <li>
-            <span>基本保障</span>
+            <span>基本保险</span>
             <span>:</span>
             <span>40</span>
           </li>
@@ -150,11 +150,12 @@ export default {
 
 <style scoped lang="less">
 .result {
-  width: 1212px;
+  width: 1203px;
   height: 895px;
   background: #f4f4f4;
   padding: 30px;
   box-sizing: border-box;
+  float: right;
   .top {
     width: 1152px;
     height: 64px;

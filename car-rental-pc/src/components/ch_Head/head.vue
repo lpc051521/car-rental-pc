@@ -35,13 +35,19 @@
              <li>
                  <img src="./img/6.png" alt="">
                  <p class="one_" @click="mart">车辆管理</p>
-                 <div v-if="show">
-                     <p class="p">车辆查询</p>
-                 </div>
+                 <img src="./img/icon-12@2x.png" alt="" class="chen" ref="trn" v-show="downIcon">
+                 <img src="./img/icon-6.png" alt="" class="chen hh" ref="tr" v-show="!downIcon">
+                 <router-link to="/inquire">
+                    <div v-if="show">
+                        <p class="p">车辆查询</p>
+                    </div>
+                 </router-link>
+                 
              </li>
              <li>
                  <img src="./img/5.png" alt="">
                  <p class="one_" @click="all_">会员管理</p>
+                 <img src="./img/icon-12@2x.png" alt="" class="chen">
                  <router-link to="/register">
                     <div v-if="all">
                         <p class="p">免费注册</p>
@@ -70,6 +76,7 @@
              <li>
                  <img src="./img/4.png" alt="">
                  <p class="one_" @click="yu_">车辆预定</p>
+                 <img src="./img/icon-12@2x.png" alt="" class="chen">
                  <router-link to="/manage">
                     <div v-if="yu">
                         <p class="p">预定管理</p>
@@ -85,15 +92,26 @@
              <li>
                  <img src="./img/3.png" alt="">
                  <p class="one_" @click="money_">费用结算</p>
-                 <div v-if="money">
-                     <p class="p">费用结算管理</p>
-                 </div>
-                 <div  v-if="money">
-                     <p class="p">验车</p>
-                 </div>
-                 <div v-if="money">
-                     <p class="p">结算</p>
-                 </div>
+                 <img src="./img/icon-12@2x.png" alt="" class="chen">
+                 <router-link to="/clearing">
+                    <div v-if="money">
+                        <p class="p">费用结算管理</p>
+                    </div>
+                 </router-link>
+                 
+
+                 <router-link to="/verify">
+                    <div  v-if="money">
+                        <p class="p">验车</p>
+                    </div>
+                 </router-link>
+                 
+                 <router-link to="/result">
+                    <div v-if="money">
+                        <p class="p">结算</p>
+                    </div>
+                 </router-link>
+                 
              </li>
          </ul>
      </aside>
@@ -112,24 +130,44 @@ export default {
      all:false,
      yu:false,
      money:false,
+    //  a:true,
+    //  b:true
+    downIcon: true
  };
  },
  methods: {
      mart(){
         this.show=!this.show;
+        this.all=false;
+        this.yu=false;
+        this.money=false;
+        // this.a=false;
+        // this.b=false;
+        // this.$refs.tr.style.display='block';
+        // this.$refs.trn.style.display='none';
+        // console.log(this.$refs)
      },
      all_(){
          this.all=!this.all;
+          this.show=false;
+        this.yu=false;
+        this.money=false;
      },
      yu_(){
          this.yu=!this.yu
+          this.all=false;
+        this.show=false;
+        this.money=false;
      },
      money_(){
          this.money=!this.money
+          this.all=false;
+        this.yu=false;
+        this.showo=false;
      },
-    //  home(){
-    //      this.$router.push('/home');
-    //  }
+     collect() {
+         this.downIcon = !this.downIcon
+     }
  },
  mounted(){
 
@@ -142,11 +180,13 @@ export default {
 
 <style scoped lang="less">
 .head{
+    
     // margin-top: -60px;
     .title{
         width: 100%;
         height: 106px;
         background-color: #282d30;
+        
         overflow: hidden;
         .left{
             margin-left: 34px;
@@ -246,12 +286,21 @@ export default {
                     overflow: hidden;
                 }
                 .one_{
-                    width: 145px;
-                    background: url('./img/icon-12@2x.png') no-repeat 99px 29px;
+                    width: 84px;
+                    float: left;
+                    // background: url('./img/icon-12@2x.png') no-repeat 99px 29px;
+                }
+                .chen{
+                    width: 7px;
+                    height: 9px;
+                    margin-top: 30px;
+                }
+                .hh{
+                    display: none;
                 }
                 div{
                     width: 220px;
-                    border-left: 6px solid #282d30;
+                    // border-left: 6px solid #282d30;
                     // display: none;
                     .p{
                         width: 100%;

@@ -1,4 +1,5 @@
 <template>
+
   <div class="clearing">
     <div class="top">
       <span>费用结算</span>
@@ -209,12 +210,12 @@ export default {
 
 <style scoped lang="less">
 .clearing {
-  width: 1212px;
+  width: 1203px;
   height: 895px;
   background: #f4f4f4;
   padding: 33px 30px;
   box-sizing: border-box;
-  float: left;
+  float: right;
   .top {
     width: 1152px;
     height: 64px;

@@ -1,17 +1,32 @@
 <template>
   <div id="app">
-    <Head></Head>
+    <Head v-show="!(path ==='/') "></Head>
     <router-view/>
   </div>
 </template>
 
 <script>
-import Head from './components/ch_Head/head'
+import Head from '../src/components/ch_Head/head'
 export default {
   name: 'App',
+  data(){
+    return{
+      path:''
+    }
+  },
   components: {
     Head
  },
+  mounted() {
+        this.path = this.$route.path;
+          // console.log(this.$route.path)
+    },
+     watch:{
+            $route(to,from){
+                this.path = to.path
+            }
+        }
+
 }
 </script>
 

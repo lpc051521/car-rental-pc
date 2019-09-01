@@ -188,7 +188,7 @@ export default {
   padding: 30px;
   box-sizing: border-box;
   font-size: 0;
-  float: left;
+  float: right;
   .top {
     width: 1152px;
     height: 64px;
