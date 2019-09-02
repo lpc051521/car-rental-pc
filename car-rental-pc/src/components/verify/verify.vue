@@ -137,9 +137,31 @@
 export default {
   props: {},
   data() {
-    return {};
+    return {
+      list:[]
+    };
   },
-  methods: {},
+  mounted() {
+    this.$axios
+      .get("http://172.25.7.159:8080/order/findUndoneOrderByTelNo?tel=13953325567")
+      .then(res => {
+        console.log(res);
+        this.list = res.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  },
+  methods: {
+    yello() {
+      // this.$refs.no.style.background = "yellow";
+      // this.$refs.no.style.border = "none";
+      // this.$refs.po.style.background=''
+      //    this.$refs.po.style.border='1px solid #ccc'
+      this.style.background = "yellow";
+      this.style.border = "none";
+    }
+  },
   components: {}
 };
 </script>
@@ -263,6 +285,9 @@ export default {
         display: flex;
         margin-top: -45px;
         margin-left: 2px;
+        .one {
+          margin-left: 1px;
+        }
         img {
           float: left;
         }
@@ -316,6 +341,7 @@ export default {
             height: 24px;
             border: 1px solid #ccc;
             margin-left: 15px;
+            text-align:center;
           }
           span:nth-child(3) {
             margin-left: 12px;
@@ -483,7 +509,7 @@ export default {
       font-size: 14px;
     }
   }
-  .yello{
+  .yello {
     float: left;
     width: 15px;
     height: 15px;
@@ -491,14 +517,14 @@ export default {
     border-radius: 50%;
     margin-top: 3px;
   }
-  .day{
-    .yello{
+  .day {
+    .yello {
       margin-top: -1px;
       margin-left: -2px;
     }
   }
-  .month{
-    .yello{
+  .month {
+    .yello {
       margin-top: 7px;
     }
   }

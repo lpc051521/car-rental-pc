@@ -35,146 +35,20 @@
           <li>操作</li>
         </ul>
         <ul class="list_s">
-          <li>
+          <li v-for="(item,index) in list" :key="index">
             <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
+              <li>{{ item[0].rentType }}</li>
+              <li>{{ item[2].carOwner }}</li>
+              <li>{{ item[1].telNo }}</li>
+              <li>{{ item[2].carName }}</li>
               <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
+              <li>{{ item[1].personId }}</li>
+              <li>{{ item[0 ].getCarTime }}</li>
               <li>
                 <span class="red">未受理</span>
               </li>
             </ul>
-          </li>
-          <li class="pink">
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="red">未受理</span>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="red">未受理</span>
-              </li>
-            </ul>
-          </li>
-          <li class="pink">
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="red">未受理</span>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="red">未受理</span>
-              </li>
-            </ul>
-          </li>
-          <li class="pink">
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="red">未受理</span>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="red">未受理</span>
-              </li>
-            </ul>
-          </li>
-          <li class="pink">
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="blue">已受理</span>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="blue">已受理</span>
-              </li>
-            </ul>
-          </li>
-          <li class="pink">
-            <ul>
-              <li>日租</li>
-              <li>王志林</li>
-              <li>15203950161</li>
-              <li>别克威朗</li>
-              <li>身份证</li>
-              <li>4111068974521258</li>
-              <li>2019-8-21</li>
-              <li>
-                <span class="blue">已受理</span>
-              </li>
-            </ul>
-          </li>
+          </li>         
         </ul>
       </div>
       <div class="page">
@@ -201,7 +75,22 @@
 export default {
   props: {},
   data() {
-    return {};
+    return {
+      list:[]
+    };
+  },
+   mounted() {
+    this.$axios
+      .get(
+        "http://172.25.7.159:8080/order/findAllByUserTelNo?tel=13953325567"
+      )
+      .then(res => {
+        console.log(res);
+        this.list = res.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   },
   methods: {},
   components: {}
