@@ -40,9 +40,7 @@ export default {
   width:1440px;
   height: 900px;
   background: url("./img/bac.png") no-repeat;
-  // margin-top: -60px;
   position: relative;
-  // overflow: hidden;
 
   
   .logo {
@@ -79,12 +77,10 @@ export default {
         text-indent: 60px;
       }
       input:nth-child(2) {
-        // background: url("./img/icon_1.png") no-repeat 20px 29px;
         margin-top: 22px;
       }
       input:nth-child(3) {
         margin-top: 41px;
-        // background: url("./img/icon_2.png") no-repeat 20px 29px;
       }
       .one{
         position:absolute;

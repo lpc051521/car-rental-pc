@@ -51,96 +51,16 @@
           <li>操作</li>
         </ul>
         <ul class="list">
-          <li>
+          <li v-for="(item,index) in list" :key="index">
             <ul class="list_s">
               <li>1</li>
-              <li>豫AS88V2</li>
-              <li>别克英朗</li>
-              <li>06242983830</li>
-              <li>5</li>
-              <li>2018-3-16</li>
-              <li>2018-9-16</li>
-              <li>张田田</li>
-              <li>
-                <a href>编辑</a>
-                <a href>删除</a>
-              </li>
-            </ul>
-          </li>
-          <li class="pink">
-            <ul class="list_s">
-              <li>2</li>
-              <li>豫A671F2</li>
-              <li>别克昂科拉</li>
-              <li>08121155944</li>
-              <li>5</li>
-              <li>2018-3-18</li>
-              <li>2018-9-18</li>
-              <li>韩小蒙</li>
-              <li>
-                <a href>编辑</a>
-                <a href>删除</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul class="list_s">
-              <li>3</li>
-              <li>豫A188HY</li>
-              <li>雪佛兰迈锐宝</li>
-              <li>08121155944</li>
-              <li>5</li>
-              <li>2018-3-18</li>
-              <li>2018-9-18</li>
-              <li>王一哲</li>
-              <li>
-                <a href>编辑</a>
-                <a href>删除</a>
-              </li>
-            </ul>
-          </li>
-          <li class="pink">
-            <ul class="list_s">
-              <li>4</li>
-              <li>豫A188HY</li>
-              <li>大众帕萨特</li>
-              <li>08121155944</li>
-              <li>5</li>
-              <li>2018-3-18</li>
-              <li>2018-9-18</li>
-              <li>田浩</li>
-              <li>
-                <a href>编辑</a>
-                <a href>删除</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul class="list_s">
-              <li>5</li>
-              <li>豫A188HY</li>
-              <li>大众途观</li>
-              <li>08121155944</li>
-              <li>5</li>
-              <li>2018-3-18</li>
-              <li>2018-9-18</li>
-              <li>柳林</li>
-              <li>
-                <a href>编辑</a>
-                <a href>删除</a>
-              </li>
-            </ul>
-          </li>
-          <li class="pink">
-            <ul class="list_s">
-              <li>6</li>
-              <li>豫A188HY</li>
-              <li>奥迪A6</li>
-              <li>08121155944</li>
-              <li>5</li>
-              <li>2018-3-18</li>
-              <li>2018-9-18</li>
-              <li>李正阳</li>
+              <li >{{ item[2].carNum }}</li>
+              <li>{{ item[2].carName }}</li>
+              <li>{{ item[2].engineNum }}</li>
+              <li>{{ item[2].takeNum }}</li>
+              <li>{{ item[2].registeTime }}</li>
+              <li>{{ item[2].certifyTime }}</li>
+              <li>{{ item[2].carOwner }}</li>
               <li>
                 <a href>编辑</a>
                 <a href>删除</a>
@@ -149,7 +69,7 @@
           </li>
         </ul>
         <div class="page">
-          <a href="" class="left">上一页</a>
+          <a href class="left">上一页</a>
           <ul>
             <li>1</li>
             <li>2</li>
@@ -159,12 +79,12 @@
             <li>···</li>
             <li>36</li>
           </ul>
-        <a href="" class="right">下一页</a>
+          <a href class="right">下一页</a>
         </div>
       </div>
     </div>
     <footer>
-        <p>Copyright@2014-2019 泸ICP备 34428597号</p>
+      <p>Copyright@2014-2019 泸ICP备 34428597号</p>
     </footer>
   </div>
 </template>
@@ -173,7 +93,22 @@
 export default {
   props: {},
   data() {
-    return {};
+    return {
+      list: []
+    };
+  },
+  mounted() {
+    this.$axios
+      .get(
+        "http://172.25.7.159:8080/order/findAllByUserTelNo?tel=13953325567"
+      )
+      .then(res => {
+        console.log(res);
+        this.list = res.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   },
   methods: {},
   components: {}
@@ -208,6 +143,7 @@ export default {
   }
   .bottom {
     width: 1152px;
+    height:700px;
     background: white;
     margin-top: 30px;
     .one {
@@ -294,6 +230,9 @@ export default {
       }
       .list {
         width: 100%;
+        // li:nth-child(even) {
+        //   background: #fff9ce;
+        // }
         li {
           width: 100%;
           height: 44px;
@@ -310,57 +249,55 @@ export default {
           ul {
             display: flex;
           }
-        }
-        .pink {
-          background: #fff9ce;
+          
         }
       }
 
       .page {
-        width:378px;
+        width: 378px;
         font-size: 12px;
         display: flex;
-        margin:30px auto;
+        margin: 30px auto;
         .left {
           width: 58px;
           height: 24px;
           border: 1px solid #ccc;
           line-height: 22px;
-          color:#999;
-          cursor:pointer;
+          color: #999;
+          cursor: pointer;
         }
-        ul{
-            display:flex;
-            margin-left:5px;
-            li{
-                width:26px;
-                height:24px;
-                border:1px solid #ccc;
-                line-height:22px;
-                margin-left:9px;
-            }
-            li:nth-child(6){
-                border:none;
-            }
+        ul {
+          display: flex;
+          margin-left: 5px;
+          li {
+            width: 26px;
+            height: 24px;
+            border: 1px solid #ccc;
+            line-height: 22px;
+            margin-left: 9px;
+          }
+          li:nth-child(6) {
+            border: none;
+          }
         }
         .right {
           width: 58px;
           height: 24px;
           border: 1px solid #ccc;
           line-height: 22px;
-          color:#333;
-          cursor:pointer;
-          margin-left:9px;
+          color: #333;
+          cursor: pointer;
+          margin-left: 9px;
         }
       }
     }
   }
-  footer{
-      margin-top:45px;
-      p{
-          font-size:14px;
-          color:#333;
-      }
+  footer {
+    margin-top: 45px;
+    p {
+      font-size: 14px;
+      color: #333;
+    }
   }
 }
 </style>

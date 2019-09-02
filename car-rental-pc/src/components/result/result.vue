@@ -8,21 +8,21 @@
     <div class="bottom">
       <div class="left">
         <p>订单信息 :</p>
-        <ul>
+        <ul v-for="(item,index) in list" :key="index">
           <li>
             <span>租赁方式</span>
             <span>:</span>
-            <span>日期</span>
+            <span>{{ item[0].rentType }}</span>
           </li>
           <li>
             <span>取车时间</span>
             <span>:</span>
-            <span>2019-8-20</span>
+            <span>{{ item[0].getCarTime }}</span>
           </li>
           <li>
             <span>还车时间</span>
             <span>:</span>
-            <span>2019-8-21</span>
+            <span>{{ item[0].returnCarTime }}</span>
           </li>
           <li>
             <span>实际还车时间</span>
@@ -32,7 +32,7 @@
           <li>
             <span>租车地点</span>
             <span>:</span>
-            <span>郑州火车站店</span>
+            <span>{{ item[0].rentCity }}</span>
           </li>
           <li>
             <span>定金</span>
@@ -121,18 +121,18 @@
           <span>积分支付</span>
         </div>
         <div class="three">
-          <input type="radio" name="lala"  />
+          <input type="radio" name="lala" />
           <span>刷卡支付</span>
         </div>
         <div class="four">
-          <input type="radio" name="lala"  />
+          <input type="radio" name="lala" />
           <span>现金支付</span>
         </div>
         <button>完成</button>
       </div>
     </div>
     <footer>
-        <p>Copyright@2014-2019 泸ICP备 34428597号</p>
+      <p>Copyright@2014-2019 泸ICP备 34428597号</p>
     </footer>
   </div>
 </template>
@@ -141,7 +141,22 @@
 export default {
   props: {},
   data() {
-    return {};
+    return {
+      list:{}
+    };
+  },
+  mounted() {
+    this.$axios
+      .get(
+        "http://172.25.7.159:8080/order/findAllByUserTelNo?tel=13953325567"
+      )
+      .then(res => {
+        console.log(res);
+        this.list = res.data;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   },
   methods: {},
   components: {}
@@ -183,7 +198,7 @@ export default {
     margin-top: 30px;
     padding: 27px;
     box-sizing: border-box;
-    position:relative;
+    position: relative;
     .left {
       font-size: 14px;
       color: #333;
@@ -268,13 +283,13 @@ export default {
       }
     }
     .way {
-    width:513px;
-      font-size:0;
-      margin:0px auto;
-      display:flex;
-      position:absolute;
-      bottom:30px;
-      left:310px;
+      width: 513px;
+      font-size: 0;
+      margin: 0px auto;
+      display: flex;
+      position: absolute;
+      bottom: 30px;
+      left: 310px;
       p {
         font-size: 18px;
         color: #333;
@@ -284,46 +299,46 @@ export default {
         color: #333;
       }
       .one {
-          display:flex;
-          margin-top:3px;
-          margin-left:23px;
+        display: flex;
+        margin-top: 3px;
+        margin-left: 23px;
         img {
           width: 15px;
           height: 15px;
-          margin-top:2px;
+          margin-top: 2px;
         }
         span {
-            margin-left:11px;
+          margin-left: 11px;
         }
       }
-      .two{
-          margin-top:4px;
-          margin-left:23px;
+      .two {
+        margin-top: 4px;
+        margin-left: 23px;
         span {
-            margin-left:11px;
+          margin-left: 11px;
         }
       }
-      .three{
-          margin-top:4px;
-          margin-left:23px;
-          span {
-            margin-left:11px;
+      .three {
+        margin-top: 4px;
+        margin-left: 23px;
+        span {
+          margin-left: 11px;
         }
       }
-      .four{
-          margin-top:4px;
-          margin-left:23px;
-          span {
-            margin-left:11px;
+      .four {
+        margin-top: 4px;
+        margin-left: 23px;
+        span {
+          margin-left: 11px;
         }
       }
-      button{
-          width:100px;
-          height:36px;
-          background:#ffe009;
-          margin-top:70px;
-          margin-left:-300px;
-          border-radius:5px;
+      button {
+        width: 100px;
+        height: 36px;
+        background: #ffe009;
+        margin-top: 70px;
+        margin-left: -300px;
+        border-radius: 5px;
       }
     }
   }
