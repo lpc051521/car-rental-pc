@@ -54,7 +54,7 @@
           <li v-for="(item,index) in list" :key="index">
             <ul class="list_s">
               <li>1</li>
-              <li>{{ item[2].carNum }}</li>
+              <li >{{ item[2].carNum }}</li>
               <li>{{ item[2].carName }}</li>
               <li>{{ item[2].engineNum }}</li>
               <li>{{ item[2].takeNum }}</li>
@@ -143,6 +143,7 @@ export default {
   }
   .bottom {
     width: 1152px;
+    height:700px;
     background: white;
     margin-top: 30px;
     .one {
@@ -229,9 +230,9 @@ export default {
       }
       .list {
         width: 100%;
-        li:nth-child(even) {
-          background: #fff9ce;
-        }
+        // li:nth-child(even) {
+        //   background: #fff9ce;
+        // }
         li {
           width: 100%;
           height: 44px;
